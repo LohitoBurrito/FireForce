@@ -1,7 +1,7 @@
-# PX4 Drone Reconnaissance  
+# FireForce
 
 ## Abstract
-This repository contains my implementation of drone reconnaissance where a drone will scan a 100m x 100m area to locate a target, and perform precision landing on the target. I will also mention that this repo uses ROS2 combined with PX4 SITL to test out PX4 hardware without having the hardware. Note that in order to set up my entire system, I followed the PX4 Documentation linked in the Credits section of this README file. After setting it up, I went through the the code examples, and figured out how to create my own PX4 gazebo world and use ros topics to publish commands and subscribe to incoming messages from the drone. 
+This repository contains my implementation of a firefighting drone where I preloaded a flight plan, and the drone will attempt to locate fire within a building and then center itself. In general, the drone will be connected to a long hose where the other end of the hose is connected to a hydrant on ground level. 
 
 ## ⭐ Base Repositories and Datasets (Credits) ⭐ <br />
 ① [PX4 Documentation](https://docs.px4.io/main/en/ros2/user_guide.html) <br />
