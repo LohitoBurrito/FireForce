@@ -81,7 +81,7 @@ Ensure you installed the PX4 Development Environment before performing this step
 ```
 cd
 git clone https://github.com/LohitoBurrito/FireForce.git
-mv FireForce/* . && rm -rf PX4_Drone_Recon
+mv FireForce/* . && rm -rf FireForce
 cd uav_app
 chmod +x setup.sh
 cd
