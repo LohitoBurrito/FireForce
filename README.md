@@ -86,14 +86,14 @@ cd uav_app
 chmod +x setup.sh
 cd
 sudo apt install ros-humble-cv-bridge
-mv ./GazeboPackage/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/red_car
-mv ./GazeboPackage/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/building
-mv ./GazeboPackage/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/omni_light
-mv ./GazeboPackage/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/hydrant
-mv ./GazeboPackage/search_and_rescue.world ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds/search_and_rescue.world
-mv ./GazeboPackage/search_and_rescue.world ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds/fire.world
-mv ./GazeboPackage/sitl_targets_gazebo-classic.cmake ./PX4-Autopilot/src/modules/simulation/simulator_mavlink/sitl_targets_gazebo-classic.cmake
-sudo rm -rf GazeboPackage
+mv ./gazebo_package/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/red_car
+mv ./gazebo_package/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/building
+mv ./gazebo_package/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/omni_light
+mv ./gazebo_package/red_car ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/hydrant
+mv ./gazebo_package/search_and_rescue.world ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds/search_and_rescue.world
+mv ./gazebo_package/search_and_rescue.world ./PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds/fire.world
+mv ./gazebo_package/sitl_targets_gazebo-classic.cmake ./PX4-Autopilot/src/modules/simulation/simulator_mavlink/sitl_targets_gazebo-classic.cmake
+sudo rm -rf gazebo_package
 ```
 ## Run Instructions
 If you just performed installation, you can close all 4 terminals, and run 4 new Ubuntu 22.04.5 LTS terminals.
