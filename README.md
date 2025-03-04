@@ -1,7 +1,8 @@
-# FireForce
+# PX4 Flight Applications
 
 ## Abstract
-This repository contains my implementation of a firefighting drone where I preloaded a flight plan, and the drone will attempt to locate fire within a building and then center itself. In general, the drone will be connected to a long hose where the other end of the hose is connected to a hydrant on ground level. 
+This repository contains my implementation of various drone missions where preloaded a flight plan, and the drone will execute based off of control code. In the future, I am researching into things like SLAM and 
+Behaviour Trees to achieve true autonomy without including flight plans. 
 
 ## ⭐ Base Repositories and Datasets (Credits) ⭐ <br />
 ① [PX4 Documentation](https://docs.px4.io/main/en/ros2/user_guide.html) <br />
@@ -96,7 +97,9 @@ mv ./gazebo_package/sitl_targets_gazebo-classic.cmake ./PX4-Autopilot/src/module
 sudo rm -rf gazebo_package
 ```
 ## Run Instructions
-If you just performed installation, you can close all 4 terminals, and run 4 new Ubuntu 22.04.5 LTS terminals.
+If you just performed installation, you can close all 4 terminals, and run 4 new Ubuntu 22.04.5 LTS terminals. For the Terminal 3 and 4 commands, you need to fill {world} and {executable} with the appropriate parameters. Below shows a table of combinations of world and executables.
+
+
 ### Terminal 1
 To start the Micro XRCE-DDS Agent, run:
 ```
@@ -112,11 +115,11 @@ To start QGC App Image, run the following:
 Start the Gazebo world by running the following. Note that if it says "gzserver not ready yet, trying again!," keep waiting. (NOTE: If this is your first time running the world, it may take a bit due to creating the build folder)
 ```
 cd PX4-Autopilot/
-make px4_sitl gazebo-classic_iris_depth_camera__fire
+make px4_sitl gazebo {world}
 ```
 ### Terminal 4
 Run the simulation by executing the following commands (NOTE: If this is your first time running the simulation, it may take a bit due to creating the build, install, and log folder)
 ```
 cd uav_app/
-./setup.sh firforce
+./setup.sh {executable}
 ```
