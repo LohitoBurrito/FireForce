@@ -98,12 +98,12 @@ sudo rm -rf gazebo_package
 ```
 ## Run Instructions
 If you just performed installation, you can close all 4 terminals, and run 4 new Ubuntu 22.04.5 LTS terminals. For the Terminal 3 and 4 commands, you need to fill {world} and {executable} with the appropriate parameters. Below shows a table of combinations of world and executables.
-
+<center>
 | World  | Executable |
 |     :---:      |     :---:      |
 | fire  | fireforce  |
 | search_and_recon  | reconnaisance  |
-
+</center>
 ### Terminal 1
 To start the Micro XRCE-DDS Agent, run:
 ```
