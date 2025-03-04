@@ -99,6 +99,10 @@ sudo rm -rf gazebo_package
 ## Run Instructions
 If you just performed installation, you can close all 4 terminals, and run 4 new Ubuntu 22.04.5 LTS terminals. For the Terminal 3 and 4 commands, you need to fill {world} and {executable} with the appropriate parameters. Below shows a table of combinations of world and executables.
 
+| World  | Executable |
+| ------------- | ------------- |
+| fire  | fireforce  |
+| search_and_recon  | reconnaisance  |
 
 ### Terminal 1
 To start the Micro XRCE-DDS Agent, run:
@@ -118,7 +122,7 @@ cd PX4-Autopilot/
 make px4_sitl gazebo {world}
 ```
 ### Terminal 4
-Run the simulation by executing the following commands (NOTE: If this is your first time running the simulation, it may take a bit due to creating the build, install, and log folder)
+Ensure you have the other terminals running before running this set of terminal commands. Run the simulation by executing the following commands (NOTE: If this is your first time running the simulation, it may take a bit due to creating the build, install, and log folder)
 ```
 cd uav_app/
 ./setup.sh {executable}
