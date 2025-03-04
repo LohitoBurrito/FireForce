@@ -72,7 +72,7 @@ sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
 sudo apt install libfuse2 -y
 sudo apt install libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor-dev -y
 ```
-Download the following [link](https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl.AppImage) to retrieve teh Q Ground Control App Image. Then run the following to turn the app image into a linux executable:
+Download the following [link](https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl.AppImage) to retrieve the Q Ground Control App Image. Then run the following to turn the app image into a linux executable:
 ```
 cd
 chmod +x ./QGroundControl.AppImage
