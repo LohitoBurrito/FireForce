@@ -10,7 +10,7 @@ Behaviour Trees to achieve true autonomy without including flight plans.
 ③ [PX4 ROS2 Communication Repo](https://github.com/PX4/px4_ros_com) <br />
 
 ## Test Videos
-- [https://www.youtube.com/watch?v=n0gshWVHZww](Recon_Test_1)
+- [Recon Test 1](https://www.youtube.com/watch?v=n0gshWVHZww)
 
 ## Installation
 For more information on installation, go to the PX4 Documentation link in credits.
