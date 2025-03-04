@@ -101,7 +101,7 @@ If you just performed installation, you can close all 4 terminals, and run 4 new
 
 <div align="center">
   
-| World  | Executable |
+| 🌎 World  | 🧭 Executable |
 |     :---:      |     :---:      |
 | fire  | fireforce  |
 | search_and_rescue  | reconnaisance  |
