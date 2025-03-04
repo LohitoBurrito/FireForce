@@ -104,7 +104,7 @@ If you just performed installation, you can close all 4 terminals, and run 4 new
 | World  | Executable |
 |     :---:      |     :---:      |
 | fire  | fireforce  |
-| search_and_recon  | reconnaisance  |
+| search_and_rescue  | reconnaisance  |
 
 </div>
 
