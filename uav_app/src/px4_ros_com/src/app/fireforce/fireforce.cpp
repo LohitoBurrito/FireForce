@@ -54,7 +54,7 @@ class HTTPPOSTServer : public rclcpp::Node {
 
 HTTPPOSTServer::HTTPPOSTServer() : Node("HTTP_SERVER") {
 
-    timer_ = this->create_wall_timer(300ms, std::bind(&HTTPPOSTServer::post_frame, this));
+    // timer_ = this->create_wall_timer(300ms, std::bind(&HTTPPOSTServer::post_frame, this));
     
 }
 
