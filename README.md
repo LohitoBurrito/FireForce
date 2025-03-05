@@ -105,8 +105,8 @@ If you just performed installation, you can close all 4 terminals, and run 4 new
   
 | World  | Executable |
 |     :---:      |     :---:      |
-| _iris_depth_camera__fire  | fireforce  |
-| _iris_downward_depth_camera__search_and_rescue  | reconnaisance  |
+| iris_depth_camera__fire  | fireforce  |
+| iris_downward_depth_camera__search_and_rescue  | reconnaisance  |
 
 </div>
 
