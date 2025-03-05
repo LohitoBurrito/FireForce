@@ -104,10 +104,10 @@ If you just performed installation, you can close all 4 terminals, and run 4 new
 
 <div align="center">
   
-| World  | Executable |
+| Executable | World |
 |     :---:      |     :---:      |
-| iris_depth_camera__fire  | fireforce  |
-| iris_downward_depth_camera__search_and_rescue  | reconnaisance  |
+|  fireforce  |  iris_depth_camera__fire  |
+|  reconnaisance  |  iris_downward_depth_camera__search_and_rescue |
 
 </div>
 
