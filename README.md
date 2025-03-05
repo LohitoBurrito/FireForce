@@ -105,8 +105,8 @@ If you just performed installation, you can close all 4 terminals, and run 4 new
   
 | World  | Executable |
 |     :---:      |     :---:      |
-| fire  | fireforce  |
-| search_and_rescue  | reconnaisance  |
+| _iris_depth_camera__fire  | fireforce  |
+| _iris_downward_depth_camera__search_and_rescue  | reconnaisance  |
 
 </div>
 
@@ -125,7 +125,7 @@ To start QGC App Image, run the following:
 Start the Gazebo world by running the following. Note that if it says "gzserver not ready yet, trying again!," keep waiting. (NOTE: If this is your first time running the world, it may take a bit due to creating the build folder)
 ```
 cd PX4-Autopilot/
-make px4_sitl gazebo {world}
+make px4_sitl gazebo-classic_{world}
 ```
 ### Terminal 4
 Ensure you have the other terminals running before running this set of terminal commands. Run the simulation by executing the following commands (NOTE: If this is your first time running the simulation, it may take a bit due to creating the build, install, and log folder)
