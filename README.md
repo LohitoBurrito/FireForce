@@ -11,6 +11,7 @@ Behaviour Trees to achieve true autonomy without including flight plans.
 
 ## Test Videos
 - [Recon Test 1](https://www.youtube.com/watch?v=n0gshWVHZww)
+- [Fire Test 1](https://www.youtube.com/watch?v=nykbBwVcKCo)
 
 ## Installation
 For more information on installation, go to the PX4 Documentation link in credits.
