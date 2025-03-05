@@ -54,7 +54,7 @@ class HTTPPOSTServer : public rclcpp::Node {
 
 HTTPPOSTServer::HTTPPOSTServer() : Node("HTTP_SERVER") {
 
-    // timer_ = this->create_wall_timer(300ms, std::bind(&HTTPPOSTServer::post_frame, this));
+    timer_ = this->create_wall_timer(300ms, std::bind(&HTTPPOSTServer::post_frame, this));
     
 }
 
@@ -66,64 +66,64 @@ size_t read_callback(void *ptr, size_t size, size_t nmemb, void *data) {
 
 void HTTPPOSTServer::post_frame() {
     
-    RCLCPP_INFO(this->get_logger(), "=================FRAME POSTED================");
-    curl = curl_easy_init();
-    if (curl) {
-        std::ifstream file("src/px4_ros_com/src/app/fireforce/images/cv_frame.jpg", std::ios::binary);
-        if (!file.is_open()) {
-            std::cerr << "Error opening file!" << std::endl;
-            return;
-        }
+    // RCLCPP_INFO(this->get_logger(), "=================FRAME POSTED================");
+    // curl = curl_easy_init();
+    // if (curl) {
+    //     std::ifstream file("src/px4_ros_com/src/app/fireforce/images/cv_frame.jpg", std::ios::binary);
+    //     if (!file.is_open()) {
+    //         std::cerr << "Error opening file!" << std::endl;
+    //         return;
+    //     }
 
-        struct curl_slist *headers = nullptr;
-        headers = curl_slist_append(headers, "Authorization: Bearer " + key);
-        headers = curl_slist_append(headers, "Content-Type: image/jpg");
+    //     struct curl_slist *headers = nullptr;
+    //     headers = curl_slist_append(headers, "Authorization: Bearer " + key);
+    //     headers = curl_slist_append(headers, "Content-Type: image/jpg");
 
-        curl_easy_setopt(curl, CURLOPT_URL, supabase_url + "/storage/v1/object/UAVFrame/cv_frame.jpg");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
-        curl_easy_setopt(curl, CURLOPT_READDATA, &file);
-        curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
+    //     curl_easy_setopt(curl, CURLOPT_URL, supabase_url + "/storage/v1/object/UAVFrame/cv_frame.jpg");
+    //     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+    //     curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
+    //     curl_easy_setopt(curl, CURLOPT_READDATA, &file);
+    //     curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
 
-        res = curl_easy_perform(curl);
+    //     res = curl_easy_perform(curl);
 
-        if (res != CURLE_OK) 
-            std::cerr << "POST REQUEST FAILED" << std::endl;
+    //     if (res != CURLE_OK) 
+    //         std::cerr << "POST REQUEST FAILED" << std::endl;
 
-        curl_easy_cleanup(curl);
-        curl_slist_free_all(headers);
-        file.close();
-    }
+    //     curl_easy_cleanup(curl);
+    //     curl_slist_free_all(headers);
+    //     file.close();
+    // }
 
-    RCLCPP_INFO(this->get_logger(), "=================SENSOR POSTED================");
-    curl = curl_easy_init();
-    if (curl) {
+    // RCLCPP_INFO(this->get_logger(), "=================SENSOR POSTED================");
+    // curl = curl_easy_init();
+    // if (curl) {
 
-        std::ifstream file("src/px4_ros_com/src/app/fireforce/data/data.txt");
-        if (!file.is_open()) {
-            std::cerr << "Error opening file!" << std::endl;
-            return;
-        }
+    //     std::ifstream file("src/px4_ros_com/src/app/fireforce/data/data.txt");
+    //     if (!file.is_open()) {
+    //         std::cerr << "Error opening file!" << std::endl;
+    //         return;
+    //     }
 
-        struct curl_slist *headers = nullptr;
-        headers = curl_slist_append(headers, "Authorization: Bearer " + key);
-        headers = curl_slist_append(headers, "Content-Type: text/plain");
+    //     struct curl_slist *headers = nullptr;
+    //     headers = curl_slist_append(headers, "Authorization: Bearer " + key);
+    //     headers = curl_slist_append(headers, "Content-Type: text/plain");
 
-        curl_easy_setopt(curl, CURLOPT_URL, supabase_url + "storage/v1/object/UAVFrame/sensor_msg.txt");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
-        curl_easy_setopt(curl, CURLOPT_READDATA, &file);
-        curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
+    //     curl_easy_setopt(curl, CURLOPT_URL, supabase_url + "storage/v1/object/UAVFrame/sensor_msg.txt");
+    //     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+    //     curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
+    //     curl_easy_setopt(curl, CURLOPT_READDATA, &file);
+    //     curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
 
-        res = curl_easy_perform(curl);
+    //     res = curl_easy_perform(curl);
 
-        if (res != CURLE_OK) 
-            std::cerr << "POST REQUEST FAILED" << std::endl;
+    //     if (res != CURLE_OK) 
+    //         std::cerr << "POST REQUEST FAILED" << std::endl;
 
-        curl_easy_cleanup(curl);
-        curl_slist_free_all(headers);
-        file.close();
-    }
+    //     curl_easy_cleanup(curl);
+    //     curl_slist_free_all(headers);
+    //     file.close();
+    // }
 }
 
 
