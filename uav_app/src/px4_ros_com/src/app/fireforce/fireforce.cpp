@@ -47,6 +47,9 @@ class HTTPPOSTServer : public rclcpp::Node {
         uint64_t offboard_setpoint_counter_;    //!< counter for the number of setpoints sent
         CURL* curl;
         CURLcode res;
+
+	std::string supabase_url = ""; // TODO: Fill out information
+	std::string key = "";	       // TODO: Fill out information
 };
 
 HTTPPOSTServer::HTTPPOSTServer() : Node("HTTP_SERVER") {
@@ -66,17 +69,17 @@ void HTTPPOSTServer::post_frame() {
     RCLCPP_INFO(this->get_logger(), "=================FRAME POSTED================");
     curl = curl_easy_init();
     if (curl) {
-        std::ifstream file("/home/lohitoburrito/uav_app/src/px4_ros_com/src/app/fireforce/images/cv_frame.jpg", std::ios::binary);
+        std::ifstream file("src/px4_ros_com/src/app/fireforce/images/cv_frame.jpg", std::ios::binary);
         if (!file.is_open()) {
             std::cerr << "Error opening file!" << std::endl;
             return;
         }
 
         struct curl_slist *headers = nullptr;
-        headers = curl_slist_append(headers, "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9sY2NwdGJzanRsa2hhcmZrbnd6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MDg1NzkxMCwiZXhwIjoyMDU2NDMzOTEwfQ.yS0izn65g0ozObRlXkOi1E0rMnKVrEPZCWVzINvsw5E");
+        headers = curl_slist_append(headers, "Authorization: Bearer " + key);
         headers = curl_slist_append(headers, "Content-Type: image/jpg");
 
-        curl_easy_setopt(curl, CURLOPT_URL, "https://olccptbsjtlkharfknwz.supabase.co/storage/v1/object/UAVFrame/cv_frame.jpg");
+        curl_easy_setopt(curl, CURLOPT_URL, supabase_url + "/storage/v1/object/UAVFrame/cv_frame.jpg");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
         curl_easy_setopt(curl, CURLOPT_READDATA, &file);
@@ -103,10 +106,10 @@ void HTTPPOSTServer::post_frame() {
         }
 
         struct curl_slist *headers = nullptr;
-        headers = curl_slist_append(headers, "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9sY2NwdGJzanRsa2hhcmZrbnd6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MDg1NzkxMCwiZXhwIjoyMDU2NDMzOTEwfQ.yS0izn65g0ozObRlXkOi1E0rMnKVrEPZCWVzINvsw5E");
+        headers = curl_slist_append(headers, "Authorization: Bearer " + key);
         headers = curl_slist_append(headers, "Content-Type: text/plain");
 
-        curl_easy_setopt(curl, CURLOPT_URL, "https://olccptbsjtlkharfknwz.supabase.co/storage/v1/object/UAVFrame/sensor_msg.txt");
+        curl_easy_setopt(curl, CURLOPT_URL, supabase_url + "storage/v1/object/UAVFrame/sensor_msg.txt");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
         curl_easy_setopt(curl, CURLOPT_READDATA, &file);
